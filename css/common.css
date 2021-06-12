@@ -266,8 +266,37 @@ th,td{
 
 /*----------导航----------*/
 .nav{
-	
+	position: relative;
+	background: #fff;
 }
+/* 碍眼的先不显示 */
 .nav .logo,.nav .login,.nav .subNav{
+	display: none;
+}
+
+.navBar,.nav .subNav{
+	text-align: center;
+	font-size: 0;
+}
+.navBar li,.nav .subNav li{
+	display: inline-block;
+	font-size: 14px;
+	padding: 0 30px;
+	height: 50px;
+}
+.navBar li.separate{
+	padding: 0;
+	color: #ccc;
+}
+.navBar li a{
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.navBar li a:hover,.navBar li.active a{
+	border-bottom: 3px solid #b4a078;
+}
+
+/* 隐藏购物车 */
+.cartWrap .cart{
 	display: none;
 }
