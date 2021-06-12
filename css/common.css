@@ -209,7 +209,7 @@ th,td{
 #head .download{
 
 }
-#head .download a{
+#head .head .download a{
 	padding-left: 25px;
 	background: url(../img/ico_01.png)  10px center no-repeat;
 }
@@ -300,10 +300,84 @@ th,td{
 	border-bottom: 3px solid #b4a078;
 }
 
-/* 隐藏购物车 */
+
+/* 购物车弹出层 */
 .cartWrap .cart{
-	display: none;
+	/* display: none; */
+		width: 328px;
+		border: 1px solid #b5a176;
+		box-shadow: 0 0 3px rgba(0,0,0,.5);
+		position: absolute;
+		top: 30px;
+		right: -22px;
+		background: #fff;
+		padding-top: 15px;
+		z-index: 10;
 }
+
+.cartWrap .cart:before{
+	content: '';
+	display: block;
+	width: 12px;
+	height: 8px;
+	background: url(../img/ico_17.gif);
+	position: absolute;
+	top: -8px;
+	right: 24px;
+}
+.cartWrap .list{
+	height: 244px;
+	position: relative;
+	overflow: hidden;
+}
+.cartWrap ul{
+	padding-left: 15px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.cartWrap li{
+	height: 60px;
+	margin-bottom: 10px;
+}
+.cartWrap .img{
+	float: left;
+}
+.cartWrap img{
+	width: 60px;
+	height: 60px;
+	background: #f4f4f4;
+}
+.cartWrap .message{
+	width: 145px;
+	float: left;
+	padding: 5px 0 5px 10px;
+	font: 12px/25px "微软雅黑";
+}
+.cartWrap .message p:nth-child(1){
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.cartWrap .message p:nth-child(2){
+	color: #c5c5c5;
+}
+.cartWrap .price{
+	float: left;
+	width: 55px;
+	padding-top: 5px;
+	font: 12px/25px "微软雅黑";
+	color: #b62628;
+}
+.cartWrap .close{
+	float: left;
+	width: 26px;
+	font: 16px/25px "微软雅黑";
+	padding-top: 5px;
+}
+
+
+
 /* 购物车父级样式 */
 .cartWrap{
 	position: absolute;
@@ -332,6 +406,7 @@ th,td{
 .nav .subNav{
 	box-shadow: 0 6px 6px #ececec;
 	padding-bottom: 20px;
+	display: none;
 }
 .nav .subNav ul{
 	display: none;
