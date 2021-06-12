@@ -226,3 +226,39 @@ th,td{
 #head .download:hover div{
 	display: block
 }
+
+/*----------搜索----------*/
+.search{
+	margin: 40px 0;
+}
+.search .center{
+	position: relative;
+	height: 60px;
+}
+.search h1{
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+}
+.searcBox{
+	height: 25px;
+	margin: 16px 40px 0 0;
+	font-size: 0;
+}
+.searcBox input{
+	width: 250px;
+	height: 24px;
+	line-height: 24px;
+	border: none;
+	border-bottom: 1px solid #d8cebc;
+	color: #b4a078;
+	outline: none;
+	font-size: 12px;
+}
+.searcBox a{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../img/ico_03.gif);
+	vertical-align: middle;
+}
