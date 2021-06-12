@@ -547,6 +547,8 @@ th,td{
 	top: 20px;
 	float: right;
 }
-/*#navFix .subNav{
+#navFix .subNav{
 	padding-top: 10px;
-}*/
+	/* display: block; */
+}
+
