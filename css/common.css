@@ -273,7 +273,7 @@ th,td{
 	 position: relative;
 }
 /* 碍眼的先不显示 */
-.nav .logo,.nav .login,.nav .subNav{
+.nav .logo,.nav .login{
 	display: none;
 }
 
@@ -304,6 +304,7 @@ th,td{
 .cartWrap .cart{
 	display: none;
 }
+/* 购物车父级样式 */
 .cartWrap{
 	position: absolute;
 	right: 0;
@@ -326,3 +327,25 @@ th,td{
 	border-radius: 50%;
 }
 
+
+/*弹出的导航样式*/
+.nav .subNav{
+	box-shadow: 0 6px 6px #ececec;
+	padding-bottom: 20px;
+}
+.nav .subNav ul{
+	display: none;
+	padding: 10px 0 20px 0;
+
+}
+.nav .subNav img{
+	display: block;
+	margin: 0 auto 10px auto;
+
+}
+.nav .subNav a{
+	font-weight: bold;
+}
+.nav .subNav li{
+	height: auto;
+}
