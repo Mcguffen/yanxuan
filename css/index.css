@@ -135,3 +135,83 @@
 #brand .bBox:last-child img{
 	height: 155px;
 }
+
+/*----------新品首发----------*/
+#new{
+	width: 1090px;
+	margin: 50px auto;
+}
+#new .content{
+	position: relative;
+}
+#new .carouselImgCon{
+	height: 327px;
+	position: relative;
+	overflow: hidden;
+}
+#new ul{
+	width: 2200px;
+	position: absolute;
+	left: 0;
+}
+#new li{
+	width: 265px;
+	/*height: 327px;*/
+	float: left;
+	margin-right: 10px;
+	position: relative;
+	overflow: hidden;
+}
+.colorNum{
+	position: absolute;
+	left: 10px;
+	top: 0;
+	font-size: 12px;
+	line-height: 20px;
+	color: #a7936e;
+	border: 1px solid #b3a07d;
+	background: #f4f0ea;
+	padding: 0 4px;
+	border-radius: 5px;
+	z-index: 2;
+}
+#new img{
+	width: 265px;
+	height: 265px;
+}
+#new img:nth-of-type(2){
+	display: none;
+}
+#new .title,#recommend .title{
+	text-align: center;
+	padding: 10px 0;
+	font-size: 12px;
+}
+#new .title a,#recommend .title a{
+	font-weight: bold;
+}
+#new .title p,#recommend .title p{
+	color: #d4282d;
+	margin-top: 5px;
+}
+#new li:hover{
+	background: #f4f0ea;
+	box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+	border-radius: 5px;
+}
+#new li:hover .colorNum{
+	display: none;
+}
+#new li:hover img:nth-of-type(1){
+	display: none;
+}
+#new li:hover img:nth-of-type(2){
+	display: block;
+}
+#new .prev{
+	left: -70px;
+	background: #E7E2D7;
+}
+#new .next{
+	right: -70px;
+}
