@@ -325,7 +325,7 @@ th,td{
 
 /* 购物车弹出层 */
 .cartWrap .cart{
-	/* display: none; */
+		display: none;
 		width: 328px;
 		border: 1px solid #b5a176;
 		box-shadow: 0 0 3px rgba(0,0,0,.5);
@@ -496,3 +496,57 @@ th,td{
 .nav .subNav li{
 	height: auto;
 }
+
+/*吸顶导航样式*/
+/* 通过css来控制是吸顶导航还是固定导航具体就是加了id="navFix"就是吸顶导航的样式,否则就是固定导航样式 */
+#navFix{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+	box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	animation: navMove .3s;
+}
+@keyframes navMove{
+	0%{
+		top:-60px;
+	}
+	100%{
+		top:0;
+	}
+}
+#navFix .logo{
+	display: block;
+	float: left;
+	margin: 13px 40px 0 0;
+}
+#navFix .navBar{
+	float: left;
+}
+#navFix .navBar li:nth-last-child(1),#navFix .navBar li:nth-last-child(2),#navFix .navBar li:nth-last-child(3){
+	display: none;
+}
+#navFix .navBar li{
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+}
+#navFix .login{
+	display: block;
+	float: right;
+	height: 60px;
+	line-height: 60px;
+}
+#navFix .login a{
+	margin-right: 20px;
+	font-size: 12px;
+	color: #666;
+}
+#navFix .cartWrap{
+	position: relative;
+	top: 20px;
+	float: right;
+}
+/*#navFix .subNav{
+	padding-top: 10px;
+}*/
