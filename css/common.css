@@ -107,19 +107,20 @@ th,td{
 #head .left{
 	color: #ccc;
 }
-#head li {
+#head .head li {
 	float: left;
 	position: relative;
+	z-index: 2;
 }
-#head li a{
+#head .head li a{
 	color: #ccc;
 	padding: 0 10px;
 	border-left: 1px solid #5c5c5c;
 }
-#head li a:hover{
+#head .head li a:hover{
 	color: #fff
 }
-#head li a.noborder{
+#head .head li a.noborder{
 	border: none;
 }
 #head .customer{
@@ -261,4 +262,12 @@ th,td{
 	height: 20px;
 	background: url(../img/ico_03.gif);
 	vertical-align: middle;
+}
+
+/*----------导航----------*/
+.nav{
+	
+}
+.nav .logo,.nav .login,.nav .subNav{
+	display: none;
 }
