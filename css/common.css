@@ -109,6 +109,7 @@ th,td{
 }
 #head li {
 	float: left;
+	position: relative;
 }
 #head li a{
 	color: #ccc;
@@ -132,6 +133,55 @@ th,td{
 	background: url(../img/customer_bg2.gif) 68px center no-repeat;
 	
 }
+#head .customer ul{
+	position: absolute;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	background: #fff;
+}
+#head .customer ul:before{
+	width: 10px;
+	height: 6px;
+	content: '';
+	display: block;
+	background: url(../img/ico_02.png);
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: -6px;
+}
+#head .customer ul li{
+	float: none;
+}
+#head .customer ul a{
+		display: block;
+		padding: 0;
+		border-left: none;
+		border-bottom: 1px solid #ddd;
+		text-align: center;
+		margin: 0 10px;
+		color: #999;
+}
+#head .customer ul a:hover{
+	color: #b4a078;
+}
+#head .customer ul a.noborder{
+	border-bottom: none;
+}
+#head .customer li div {
+	position: absolute;
+	width: 110px;
+	height: 57px;
+	right: -110px;
+	top: 0;
+	line-height: 20px;
+	
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	background: #fff;
+}
+
+
 #head .download{
 
 }
