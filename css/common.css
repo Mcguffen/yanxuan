@@ -131,15 +131,19 @@ th,td{
 #head .customer:hover{
 	
 	background: url(../img/customer_bg2.gif) 68px center no-repeat;
-	
+}
+#head .customer:hover ul{
+		display: block;
 }
 #head .customer ul{
 	position: absolute;
 	border: 1px solid #ddd;
 	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	background: #fff;
+	display: none;
 }
-#head .customer ul:before{
+
+#head .customer ul:before,#head .download div::before{
 	width: 10px;
 	height: 6px;
 	content: '';
@@ -169,17 +173,36 @@ th,td{
 #head .customer ul a.noborder{
 	border-bottom: none;
 }
-#head .customer li div {
+#head .customer li.phone{
+		background: url(../img/phone_bg1.gif) 62px center no-repeat;
+}
+#head .customer li.phone:hover{
+		background: url(../img/phone_bg2.gif) 62px center no-repeat;
+}
+#head .customer li.phone:hover div{
+	display: block;
+}
+#head .customer li.phone div {
 	position: absolute;
 	width: 110px;
 	height: 57px;
 	right: -110px;
 	top: 0;
 	line-height: 20px;
-	
+	text-align: center;
 	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	background: #fff;
+	display: none;
 }
+#head .customer li.phone div p:nth-child(1){
+	font-size: 14px;
+	color: #999;
+	margin-top: 12px;
+}
+#head .customer li.phone div p:nth-child(2){
+	color: #ccc;
+}
+
 
 
 #head .download{
@@ -188,4 +211,18 @@ th,td{
 #head .download a{
 	padding-left: 25px;
 	background: url(../img/ico_01.png)  10px center no-repeat;
+}
+#head .download div{
+	position: absolute;
+	left: -46px;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	padding: 10px;
+	line-height: 20px;
+	color: #b4a078;
+	background: #fff;
+	display: none;
+}
+#head .download:hover div{
+	display: block
 }
