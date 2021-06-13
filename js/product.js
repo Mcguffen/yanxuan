@@ -236,3 +236,53 @@ positionFn.innerHTML+=curData.name;
 		moveWay:'position'
 	});
 })();
+
+//详情功能
+(function(){
+	//详情与评价选项卡
+	var as=yx.ga('#bottom .title a');
+	var tabs=yx.ga('#bottom .content>div');
+	var ln=0;
+	
+	for(var i=0;i<as.length;i++){
+		as[i].index=i;
+		as[i].onclick=function(){
+			as[ln].className='';
+			tabs[ln].style.display='none';
+			
+			this.className='active';
+			tabs[this.index].style.display='block';
+			
+			ln=this.index;
+		};
+	}
+		//详情内容产品参数
+		var tbody=yx.g('.details tbody');
+		for(var i=0;i<curData.attrList.length;i++){
+			/*
+			 * 1、共有6条数据，需要创建3个tr，12个td
+			 * 2、一个对象里包含两个数据，就需要两个td，所以每循环一次要创建两个td
+			 * 3、一个tr里包含了四个td，所以循环两次创建一个tr
+			 * 
+			 */
+			
+			if(i%2==0){
+				//这个条件是2的倍数
+				var tr=document.createElement("tr");
+			}
+			
+			var td1=document.createElement("td");
+			td1.innerHTML=curData.attrList[i].attrName;
+			var td2=document.createElement("td");
+			td2.innerHTML=curData.attrList[i].attrValue;
+			
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			
+			tbody.appendChild(tr);
+		}
+		
+		//详情图片列表
+		var img=yx.g('.details .img');
+		img.innerHTML=curData.itemDetail.detailHtml;
+	})();
