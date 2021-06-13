@@ -688,3 +688,16 @@ footer .foot .copy a{
 #sideBar .back:hover{
 	background-color: #B4A078;
 }
+
+/*----------面包屑----------*/
+#position{
+	width: 1090px;
+	margin: 0 auto;
+	line-height: 60px;
+	font-size: 12px;
+	color: #999;
+}
+#position a:hover{
+	text-decoration: underline;
+	color: #333;
+}
