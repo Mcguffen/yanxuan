@@ -478,7 +478,14 @@ th,td{
 .nav .subNav{
 	box-shadow: 0 6px 6px #ececec;
 	padding-bottom: 20px;
-	display: none;
+	opacity: 0;
+	
+	position: absolute;
+	top: 50px;
+	z-index: 2;
+	background: #fff;
+	width: 100%;
+	transition: .2s;
 }
 .nav .subNav ul{
 	display: none;
