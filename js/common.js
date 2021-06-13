@@ -5,6 +5,21 @@ window.yx={
 	ga:function(name){
 		return document.querySelectorAll(name);
 	},
+	addEvent:function(obj,ev,fn){
+		if(obj.addEventListener){
+			obj.addEventListener(ev,fn);
+		}else{
+			// ie
+			obj.attachEvent('on'+ev,fn);
+		}
+	},
+	removeEvent:function(obj,ev,fn){
+		if(obj.removeEventListener){
+			obj.removeEventListener(ev,fn);
+		}else{
+			obj.detachEvent('on'+ev,fn);
+		}
+	},
 	public:{
 		navFn:function(){		//导航功能
 			var nav=yx.g('.nav');
@@ -32,8 +47,16 @@ window.yx={
 					uls[this.index].style.display='none';
 				};
 			}
-
+			
+			yx.addEvent(window,'scroll',setNavPos);
+			setNavPos();
+			var top=nav.offsetTop;		//这是新加的，解决bug
+			function setNavPos(){
+				nav.id=window.pageYOffset>nav.offsetTop?'navFix':'';
 			}
 			
-		}		
+
+		}
+			
+	}		
 }
