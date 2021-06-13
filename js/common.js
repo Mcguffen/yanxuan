@@ -70,7 +70,7 @@ window.yx={
 			yx.addEvent(window,'scroll',delayImg);
 			delayImg();
 			function delayImg(){
-				console.log(1)
+				// console.log(1)
 				var originals=yx.ga('.original');		//所有要懒加载的图片
 				var scrollTop=window.innerHeight+window.pageYOffset;		//这个距离是可视区的高度与滚动条的距离之和
 				
@@ -87,6 +87,23 @@ window.yx={
 					yx.removeEvent(window,'scroll',delayImg);
 				}
 			}
+		},
+		backUpFn:function(){			//回到顶部功能
+			var back=yx.g('.back');
+			var timer;
+			back.onclick=function(){
+				var top=window.pageYOffset;
+				
+				timer=setInterval(function(){
+					top-=150;
+					if(top<=0){
+						top=0;
+						clearInterval(timer);
+					}
+					
+					window.scrollTo(0,top);
+				},16);
+			};
 		}
 			
 	}		
