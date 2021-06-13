@@ -286,3 +286,40 @@ positionFn.innerHTML+=curData.name;
 		var img=yx.g('.details .img');
 		img.innerHTML=curData.itemDetail.detailHtml;
 	})();
+
+
+//评价功能
+(function(){
+	console.log(commentData);
+	//修改标题上的文字
+	var evaluateNum=commentData[pageId].data.result.length;		//当前评论的数量
+	var evaluateText=evaluateNum>1000?'999+':evaluateNum;
+	yx.ga('#bottom .title a')[1].innerHTML='评价<span>（'+evaluateText+'）</span>';
+	
+	var allData=[[],[]];			//第一个代表全部评价，第二个代表有图的评价
+	for(var i=0;i<evaluateNum;i++){
+		allData[0].push(commentData[pageId].data.result[i]);
+		
+		if(commentData[pageId].data.result[i].picList.length){
+			allData[1].push(commentData[pageId].data.result[i]);
+		}
+	}
+	yx.ga('#bottom .eTitle span')[0].innerHTML='全部（'+allData[0].length+'）';
+	yx.ga('#bottom .eTitle span')[1].innerHTML='有图（'+allData[1].length+'）';
+	
+	
+	var curData=allData[0];			//代表当前显示的那个数据
+	var btns=yx.ga('#bottom .eTitle div');
+	var ln=0;
+	
+	for(var i=0;i<btns.length;i++){
+		btns[i].index=i;
+		btns[i].onclick=function(){
+			btns[ln].className='';
+			this.className='active';
+			
+			ln=this.index;
+			
+		};
+	}
+})();
