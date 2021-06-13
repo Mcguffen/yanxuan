@@ -283,3 +283,134 @@
 #recommend .original{
 	background-color: #fff;
 }
+
+/*----------限时购----------*/
+#limit{
+	width: 1090px;
+	margin: 40px auto;
+}
+#limit h3{
+	font-size: 28px;
+}
+#limit header{
+	margin-bottom: 20px;
+}
+#limit header .right{
+	padding-top: 5px;
+}
+#limit .time{
+	width: 224px;
+	height: 377px;
+	text-align: center;
+	background: url(../images/time_bg.jpg);
+}
+#limit .time h4{
+	font-size: 28px;
+	font-weight: normal;
+	color: #615548;
+	margin-top: 60px;
+}
+#limit .time p{
+	font-size: 18px;
+	color: #615548;
+	margin: 40px 0 20px 0;
+}
+#limit .timeBox span{
+	display: inline-block;
+	width: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 18px;
+	background: #615548;
+	border-radius: 5px;
+	margin: 0 2px;
+}
+#limit .time a{
+	display: block;
+	width: 110px;
+	line-height: 30px;
+	color: #fff;
+	background: #a7936e;
+	border-radius: 15px;
+	margin: 30px auto 0 auto;
+}
+#limit .boxWrap{
+	width: 866px;
+}
+#limit .limitBox{
+	width: 432px;
+	height: 177px;
+	border: 1px solid #f0ece4;
+	border-left: none;
+	float: left;
+	padding-top: 10px;
+}
+#limit .limitBox:nth-of-type(3),#limit .limitBox:nth-of-type(4){
+	border-top: none;
+}
+#limit .limitBox a.left{
+	width: 180px;
+	height: 177px;
+	overflow: hidden;
+}
+#limit .limitBox img{
+	width: 180px;
+	height: 177px;
+}
+#limit .limitBox .right{
+	width: 252px;
+}
+#limit .limitBox .title{
+	font-size: 16px;
+	line-height: 26px;
+}
+#limit .limitBox p{
+	line-height: 24px;
+	color: #999;
+}
+#limit .numBar{
+	margin: 10px 0;
+	line-height: 12px;
+	color: #999;
+}
+#limit .numCon{
+	float: left;
+	width: 152px;
+	height: 10px;
+	border: 1px solid #f2cecd;
+	border-radius: 5px;
+	margin-right: 5px;
+}
+#limit .numCon span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #ffe5e5;
+}
+#limit .xianshi{
+	color: #be4141;
+}
+#limit .fuhao{
+	font-size: 18px;
+	margin-left: 5px;
+}
+#limit strong{
+	font-size: 24px;
+}
+#limit .yuan{
+	color: #999;
+	margin-left: 10px;
+}
+#limit .qianggou{
+	display: block;
+	width: 118px;
+	line-height: 31px;
+	font-size: 16px;
+	color: #fff;
+	background: #da4f4f;
+	text-align: center;
+	margin-top: 10px;
+}
+#limit .original{
+	background-color: #fff;
+}
