@@ -195,3 +195,85 @@
 	border: 1px solid #ccc;
 	background: url(../img/collection_bg.gif) no-repeat center 6px;
 }
+
+
+/*----------大家都在看----------*/
+#look{
+	margin: 20px auto;
+}
+#look .center{
+	border: 1px solid #e8e8e8;
+}
+#look h3{
+	font: bold 18px/44px "微软雅黑";
+	background: #f5f5f5;
+	text-indent: 20px;
+}
+#look .content{
+	position: relative;
+}
+#look .carouselImgCon{
+	position: relative;
+	height: 250px;
+	padding-bottom: 20px;
+	margin: 0 80px;
+	overflow: hidden;
+}
+#look ul{
+	width: 1920px;
+	position: absolute;
+	left: 0;	
+}
+#look ul li{
+	width: 210px;
+	float: left;
+	text-align: center;
+	margin-right: 30px;
+}
+#look ul li img{
+	width: 210px;
+	height: 210px;
+}
+#look ul li a{
+	font: bold 12px/12px "微软雅黑";
+	display: block;
+}
+#look ul li span{
+	font: 12px/12px "微软雅黑";
+	color: #d4282d;
+	margin-top: 16px;
+}
+.prev,.next{
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background: #d1c5af;
+	color: #fff;
+	line-height:30px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+#look .prev:hover,#look .next:hover{
+	background: #B4A078;
+}
+#look .prev{
+	left: 20px;
+}
+#look .next{
+	right: 20px;
+}
+
+/*下面的两个样式是为了设置不能点击时候的颜色（可能会用得到）*/
+#look div.noClick{
+	background: #ddd;
+}
+#look div.noClick:hover{
+	background: #ddd;
+}
