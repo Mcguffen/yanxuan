@@ -414,3 +414,60 @@
 #limit .original{
 	background-color: #fff;
 }
+
+
+/*----------居家----------*/
+.category{
+	width: 1090px;
+	margin: 40px auto;
+}
+.category h3{
+	font-size: 28px;
+	margin-right: 10px;
+	display: inline;
+}
+.category .left span{
+	border-left: 1px solid #666;
+	padding: 3px 0 0 5px;
+}
+.category .right ul{
+	float: right;
+}
+.category .right li{
+	display: inline;
+}
+.category .right li a{
+	margin: 0 10px;
+}
+.category .more{
+	float: right;
+	margin-left: 20px;
+}
+.category .categoryBigImg img{
+	width: 1090px;
+	height: 320px;
+	margin: 20px auto;
+}
+.category .categoryList{
+	display: flex;
+	justify-content: space-between;
+}
+.category .categoryList li{
+	text-align: center;
+}
+.category .categoryList li>a{
+	display: block;
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+}
+.category .categoryList img{
+	width: 250px;
+	height: 250px;
+}
+.category .categoryList p a{
+	line-height: 26px;
+}
+.category .categoryList span{
+	color: #d4282d;
+}
