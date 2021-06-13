@@ -29,6 +29,24 @@ window.yx={
 		
 		return top;
 	},
+	cutTime:function(target){	//倒计时
+		var currentDate=new Date();
+		var v=Math.abs(target-currentDate);
+		
+		return {
+			d:parseInt(v/(24*3600000)),
+			h:parseInt(v%(24*3600000)/3600000),
+			m:parseInt(v%(24*3600000)%3600000/60000),
+			s:parseInt(v%(24*3600000)%3600000%60000/1000)
+		};
+	},
+	format:function(v){		//给时间补0
+		return v<10?'0'+v:v;
+	},
+	formatDate:function(time){
+		var d=new Date(time);
+		return d.getFullYear()+'-'+yx.format(d.getMonth()+1)+'-'+yx.format(d.getDate())+' '+yx.format(d.getHours())+':'+yx.format(d.getMinutes());
+	},
 	public:{
 		navFn:function(){		//导航功能
 			var nav=yx.g('.nav');

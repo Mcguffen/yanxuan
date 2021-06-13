@@ -50,11 +50,11 @@ newProduct.on('rightClick',function(){
 var sayPic=new Carousel();
 sayPic.init({
 	id:'sayPic',
-	autoplay:false,
+	autoplay:true,
 	intervalTime:3000,
 	loop:true,
 	totalNum:6,
-	moveNum:3,
+	moveNum:1,
 	circle:false,
 	moveWay:'position'
 });
@@ -75,4 +75,51 @@ sayPic.init({
 			contents[this.index].style.display='block';
 		};
 	}
+})();
+
+//限时购
+(function(){
+	var timeBox=yx.g('#limit .timeBox');
+	var spans=yx.ga('#limit .timeBox span');
+	var timer=setInterval(showTime,1000);
+	
+	//倒计时
+	showTime();
+	function showTime(){
+		var endTime=new Date(2021,6,14,14);
+		if(new Date()<endTime){	//如果当前的时间没有超过结束的时间才去做倒计时
+			var overTime=yx.cutTime(endTime);
+			spans[0].innerHTML=yx.format(overTime.h);
+			spans[1].innerHTML=yx.format(overTime.m);
+			spans[2].innerHTML=yx.format(overTime.s);
+		}else{
+			clearInterval(timer);
+		}
+	}
+	
+	//商品数据
+	var boxWrap=yx.g('#limit .boxWrap');
+	var str='';
+	var item=json_promotion.itemList;
+	
+	for(var i=0;i<item.length;i++){
+		str+='<div class="limitBox">'+
+				'<a href="#" class="left scaleImg"><img class="original" src="images/empty.gif" data-original="'+item[i].primaryPicUrl+'"/></a>'+
+				'<div class="right">'+
+					'<a href="#" class="title">'+item[i].itemName+'</a>'+
+					'<p>'+item[i].simpleDesc+'</p>'+
+					'<div class="numBar clearfix">'+
+						'<div class="numCon"><span style="width:'+Number(item[i].currentSellVolume)/Number(item[i].totalSellVolume)*100+'%"></span></div>'+
+						'<span class="numTips">还剩'+item[i].currentSellVolume+'件</span>'+
+					'</div>'+
+					'<div>'+
+						'<span class="xianshi">限时价<span class="fuhao">¥</span><strong>'+item[i].actualPrice+'</strong></span>'+
+						'<span class="yuan">原价 ¥'+item[i].retailPrice+'</span>'+
+					'</div>'+
+					'<a href="#" class="qianggou">立即抢购</a>'+
+				'</div>'+
+			'</div>';
+	}
+	
+	boxWrap.innerHTML=str;
 })();
