@@ -41,7 +41,7 @@ window.yx={
 			for(var i=1;i<lis.length-3;i++){
 				newLis.push(lis[i]);
 			}
-			console.log(newLis);
+			// console.log(newLis);
 			for(var i=0;i<newLis.length;i++){
 				newLis[i].index=uls[i].index=i;
 				newLis[i].onmouseenter=uls[i].onmouseenter=function(){
@@ -70,6 +70,7 @@ window.yx={
 			yx.addEvent(window,'scroll',delayImg);
 			delayImg();
 			function delayImg(){
+				console.log(1)
 				var originals=yx.ga('.original');		//所有要懒加载的图片
 				var scrollTop=window.innerHeight+window.pageYOffset;		//这个距离是可视区的高度与滚动条的距离之和
 				
