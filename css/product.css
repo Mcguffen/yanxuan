@@ -353,3 +353,191 @@
 }
 
 
+/*评价里的样式*/
+#bottom .border{
+	border: 1px solid #e8e8e8;
+	border-top: none;
+	padding: 14px 14px 0 14px;
+}
+#bottom .eTitle{
+	border-bottom: 1px solid #eaeaea;
+}
+#bottom .eTitle div{
+	float: left;
+	padding: 15px 0;
+	margin-right: 20px;
+	cursor: pointer;
+}
+#bottom .eTitle i{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	margin-right: 10px;
+	background: url(../img/input_bg.png) no-repeat 0 -15px;
+}
+#bottom .eTitle span{
+	vertical-align: middle;
+}
+#bottom .eTitle .active i{
+	background: url(../img/input_bg.png) no-repeat 0 0px;
+}
+#bottom .eTitle .active span{
+	color: #B4A078;
+}
+#bottom .evaluate li{
+	border-bottom: 1px dashed #e8e8e8;
+	padding: 30px 0;
+	overflow: hidden;
+}
+#bottom .evaluate li:last-child{
+	border: none;
+}
+#bottom .evaluate li li{
+	padding: 0;
+	border: none;
+	float: left;
+}
+
+#bottom .avatar{
+	float: left;
+	width: 90px;
+	text-align: center;
+}
+#bottom .avatar img{
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: 0 auto 14px auto;
+}
+#bottom .vip1{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 6px;
+	background: url(../img/vip.gif) no-repeat 0 0;
+}
+#bottom .avatar span{
+	vertical-align: middle;
+	font-size: 12px;
+}
+#bottom .text{
+	float: left;
+	width: 630px;
+	padding-top: 18px;
+}
+#bottom .text p{
+	line-height: 20px;
+}
+#bottom .smallImg{
+	margin: 15px 0;
+}
+#bottom .smallImg span{
+	float: left;
+	width: 60px;
+	height: 60px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	margin-right: 10px;
+}
+#bottom .smallImg img{
+	width: 60px;
+	height: 60px;
+}
+#bottom .color{
+	font-size: 12px;
+	color: #9f9f9f;
+	line-height: 16px;
+}
+#bottom .dialog{
+	border: 1px solid #e8e8e8;
+	background: #f5f5f5;
+	margin: 10px 0 30px 0;
+	position: relative;
+	transition: .3s;
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	/*opacity: 0;*/
+	/*height: 510px;*/
+}
+#bottom .carouselImgCon{
+	position: relative;
+	width: 584px;
+	height: 438px;
+	margin: 50px auto 20px auto;
+	overflow: hidden;
+}
+#bottom .carouselImgCon ul{
+	position: absolute;
+	left: 0;
+	width: 2000px;
+}
+#bottom .carouselImgCon img{
+	width: 584px;
+	height: 438px;
+}
+#bottom .dialog .close{
+	width: 25px;
+	height: 25px;
+	font-size: 25px;
+	color: #ccc;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+#bottom .dialog .close:hover{
+	color: #999;
+}
+#bottom .prev,#bottom .next{
+	width: 48px;
+	height: 48px;
+	border-radius: 0;
+	line-height: 48px;
+	font-size: 20px;
+	background: #b0b0b0;
+}
+#bottom .prev{
+	left: 30px;
+}
+#bottom .next{
+	right: 30px;
+}
+#bottom .prev:hover,#bottom .next:hover{
+	background: #848484;
+}
+
+#bottom .page{
+	text-align: right;
+	margin-top: 20px;
+	font-size: 0;
+}
+#bottom .page span{
+	display: inline-block;
+	font-size: 12px;
+	padding: 7px 10px;
+	border: 1px solid #e6e6e6;
+	border-left: none;
+	cursor: pointer;
+}
+#bottom .page span:hover{
+	color: #B4A078;
+}
+#bottom .page span:first-child{
+	border-left: 1px solid #e6e6e6;
+}
+#bottom .page span.active{
+	background: #B4A078;
+	color: #fff;
+	border: none;
+	padding: 8px 10px;
+}
+#bottom .page span.active:hover{
+	opacity: 0.9;
+}
+#bottom .page div{
+	display: inline-block;
+}
