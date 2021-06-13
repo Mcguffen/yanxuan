@@ -47,6 +47,17 @@ window.yx={
 		var d=new Date(time);
 		return d.getFullYear()+'-'+yx.format(d.getMonth()+1)+'-'+yx.format(d.getDate())+' '+yx.format(d.getHours())+':'+yx.format(d.getMinutes());
 	},
+	parseUrl:function(url){		//把url后面的参数解析成对象
+		//id=1143021
+		var reg=/(\w+)=(\w+)/ig;
+		var result={};
+		
+		url.replace(reg,function(a,b,c){
+			result[b]=c;
+		});
+		
+		return result;
+	},
 	public:{
 		navFn:function(){		//导航功能
 			var nav=yx.g('.nav');

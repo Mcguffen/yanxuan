@@ -81,7 +81,7 @@
 	width: 3px;
 	height: 3px;
 	vertical-align: middle;
-	background: url(../img/ico_15.gif) no-repeat;
+	background: url(../images/ico_15.gif) no-repeat;
 	margin: 0 5px 0 15px;
 }
 #productImg .price i:nth-child(1){
@@ -111,7 +111,7 @@
 }
 #productImg .fomat dd.active{
 	border: 2px solid #B4A078;
-	background: url(../img/ico_16.gif) right bottom no-repeat;
+	background: url(../images/ico_16.gif) right bottom no-repeat;
 }
 #productImg .fomat dd.noclick{
 	cursor: not-allowed;
@@ -180,7 +180,7 @@
 	text-indent: 40px;
 	margin: 0 10px;
 	border: 1px solid #B4A078;
-	background: #B4A078 url(../img/join_bg.gif) no-repeat 25px 13px;
+	background: #B4A078 url(../images/join_bg.gif) no-repeat 25px 13px;
 }
 #productImg .btn a.join:hover{
 	opacity: 0.8;
@@ -193,7 +193,7 @@
 	font-size: 14px;
 	color: #999;
 	border: 1px solid #ccc;
-	background: url(../img/collection_bg.gif) no-repeat center 6px;
+	background: url(../images/collection_bg.gif) no-repeat center 6px;
 }
 
 
@@ -331,7 +331,7 @@
 }
 #bottom .img p{
 	height: 200px;
-	background: #fff url(../img/original.png) no-repeat center;
+	background: #fff url(../images/original.png) no-repeat center;
 }
 #bottom .problem{
 	margin: 80px 0;
@@ -374,13 +374,13 @@
 	height: 15px;
 	vertical-align: middle;
 	margin-right: 10px;
-	background: url(../img/input_bg.png) no-repeat 0 -15px;
+	background: url(../images/input_bg.png) no-repeat 0 -15px;
 }
 #bottom .eTitle span{
 	vertical-align: middle;
 }
 #bottom .eTitle .active i{
-	background: url(../img/input_bg.png) no-repeat 0 0px;
+	background: url(../images/input_bg.png) no-repeat 0 0px;
 }
 #bottom .eTitle .active span{
 	color: #B4A078;
@@ -417,7 +417,7 @@
 	height: 16px;
 	vertical-align: middle;
 	margin-right: 6px;
-	background: url(../img/vip.gif) no-repeat 0 0;
+	background: url(../images/vip.gif) no-repeat 0 0;
 }
 #bottom .avatar span{
 	vertical-align: middle;
