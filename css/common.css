@@ -477,7 +477,7 @@ th,td{
 /*弹出的导航样式*/
 .nav .subNav{
 	box-shadow: 0 6px 6px #ececec;
-	padding-bottom: 20px;
+	/* padding-bottom: 20px; */
 	opacity: 0;
 	
 	position: absolute;
@@ -485,7 +485,7 @@ th,td{
 	z-index: 2;
 	background: #fff;
 	width: 100%;
-	transition: .2s;
+	transition: .2s opacity;
 }
 .nav .subNav ul{
 	display: none;
@@ -555,7 +555,7 @@ th,td{
 	float: right;
 }
 #navFix .subNav{
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	/* display: block; */
 }
 
