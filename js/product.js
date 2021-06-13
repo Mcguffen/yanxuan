@@ -210,4 +210,29 @@ positionFn.innerHTML+=curData.name;
 	}
 })();
 
-
+//大家都在看
+(function(){
+	var ul=yx.g('#look ul');
+	var str='';
+	
+	for(var i=0;i<recommendData.length;i++){
+		str+='<li>'+
+				'<a href="#"><img src="'+recommendData[i].listPicUrl+'"/></a>'+
+				'<a href="#">'+recommendData[i].name+'</a>'+
+				'<span>¥'+recommendData[i].retailPrice+'</span>'+
+			'</li>';
+	}
+	ul.innerHTML=str;
+	
+	var allLook=new Carousel();
+	allLook.init({
+		id:'allLook',
+		autoplay:false,
+		intervalTime:3000,
+		loop:false,
+		totalNum:8,
+		moveNum:4,
+		circle:false,
+		moveWay:'position'
+	});
+})();
