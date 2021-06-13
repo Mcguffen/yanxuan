@@ -319,7 +319,67 @@ positionFn.innerHTML+=curData.name;
 			this.className='active';
 			
 			ln=this.index;
+			curData = allData[this.index];
 			
+			showComment(10,0)
 		};
 	}
+	
+		
+	//显示评价数据
+		function showComment(pn,cn){
+			//pn			一页显示几条
+			//cn			现在是哪页
+			
+			var ul=yx.g('#bottom .border>ul');
+			var dataStart=pn*cn;			//数据起始的值
+			var dataEnd=dataStart+pn;	//数据结束的值
+			
+			//如果结束的值大于了数据的总量，循环的时候就会报错，所以要把结束的值改成数量总量
+			if(dataEnd>curData.length){
+				dataEnd=curData.length;
+			}
+			
+			//主体结构
+			var str='';
+			ul.innerHTML='';
+			for(var i=dataStart;i<dataEnd;i++){
+				var avatart=curData[i].frontUserAvatar?curData[i].frontUserAvatar:'images/avatar.png';				//头像地址
+				
+				var smallImg='';		//小图的父级，要放在if外面
+				var dialog='';		//轮播图的父级，要放在if外面
+				
+				if(curData[i].picList.length){
+					//这个条件满足的话，说明这条评论有小图以及轮播图
+					var span='';			//小图片的父级是个span标签
+					var li='';			//轮播图图片的父级是个li标签
+					for(var j=0;j<curData[i].picList.length;j++){
+						span+='<span><img src="'+curData[i].picList[j]+'" alt=""></span>';
+						li+='<li><img src="'+curData[i].picList[j]+'" alt=""></li>';
+					}
+					
+					smallImg='<div class="smallImg clearfix">'+span+'</div>';
+					dialog='<div class="dialog" id="commmetImg'+i+'" data-imgnum="'+curData[i].picList.length+'"><div class="carouselImgCon"><ul>'+li+'</ul></div><div class="close">X</div></div>';
+				}
+				
+				str+='<li>'+
+						'<div class="avatar">'+
+							'<img src="'+avatart+'" alt="">'+
+							'<a href="#" class="vip1"></a><span>'+curData[i].frontUserName+'</span>'+
+						'</div>'+
+						'<div class="text">'+
+							'<p>'+curData[i].content+'</p>'+smallImg+
+							'<div class="color clearfix">'+
+								'<span class="left">'+curData[i].skuInfo+'</span>'+
+								'<span class="right">'+yx.formatDate(curData[i].createTime)+'</span>'+
+							'</div>'+dialog+
+						'</div>'+
+					'</li>';
+			}
+			
+			ul.innerHTML=str;
+			
+			
+		}
+	
 })();
