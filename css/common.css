@@ -649,3 +649,42 @@ footer .foot .copy{
 footer .foot .copy a{
 	color: #999;
 }
+
+/*----------侧边栏----------*/
+#sideBar{
+	width: 60px;
+	position: fixed;
+	bottom: 20px;
+	right: 1%;
+	text-align: center;
+	background: #fff;
+}
+#sideBar .top{
+	border: 1px solid #ddd;
+	font-size: 12px;
+}
+#sideBar .top a{
+	display: block;
+	padding-top: 30px;
+	margin: 10px 0;
+}
+#sideBar .top a:nth-child(1){
+	background: url(../images/ico_11.gif) top center no-repeat;
+}
+#sideBar .top a:nth-child(2){
+	background: url(../images/ico_12.gif) top center no-repeat;
+}
+#sideBar .top a:nth-child(3){
+	background: url(../images/ico_13.gif) top center no-repeat;
+}
+#sideBar .back{
+	display: block;
+	height: 45px;
+	color: #fff;
+	padding-top: 20px;
+	box-sizing: border-box;
+	background: #999 url(../images/ico_14.gif) center 8px  no-repeat;
+}
+#sideBar .back:hover{
+	background-color: #B4A078;
+}
