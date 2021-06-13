@@ -90,12 +90,12 @@ th,td{
 
 /* 图片懒加载 配合js来做 css主要是在真的图片还没有加载的时候 先用css提供的背景图片 */
 .original{
-	background: #f4f4f4 url(../img/original.png) center no-repeat;
+	background: #f4f4f4 url(../images/original.png) center no-repeat;
 }
 
 /* ---------头部--------- */
 #head{
-	border-bottom: 1px sid: #f3f3f3;
+	border-bottom: 1px solid #f3f3f3;
 	/* 阴影 x轴 y轴 阴影大小*/
 	box-shadow: 0 2px 2px #f3f3f3;
 }
@@ -126,12 +126,12 @@ th,td{
 #head .customer{
 	padding-right: 10px;
 	margin-right: 10px;
-	background: url(../img/customer_bg1.gif) 68px center no-repeat;
+	background: url(../images/customer_bg1.gif) 68px center no-repeat;
 	
 }
 #head .customer:hover{
 	
-	background: url(../img/customer_bg2.gif) 68px center no-repeat;
+	background: url(../images/customer_bg2.gif) 68px center no-repeat;
 }
 #head .customer:hover ul{
 		display: block;
@@ -144,12 +144,12 @@ th,td{
 	display: none;
 }
 
-#head .customer ul:before,#head .download div::before{
+#head .customer ul:before,#head .down div::before{
 	width: 10px;
 	height: 6px;
 	content: '';
 	display: block;
-	background: url(../img/ico_02.png);
+	background: url(../images/ico_02.png);
 	position: absolute;
 	margin: auto;
 	left: 0;
@@ -175,10 +175,10 @@ th,td{
 	border-bottom: none;
 }
 #head .customer li.phone{
-		background: url(../img/phone_bg1.gif) 62px center no-repeat;
+		background: url(../images/phone_bg1.gif) 62px center no-repeat;
 }
 #head .customer li.phone:hover{
-		background: url(../img/phone_bg2.gif) 62px center no-repeat;
+		background: url(../images/phone_bg2.gif) 62px center no-repeat;
 }
 #head .customer li.phone:hover div{
 	display: block;
@@ -206,14 +206,14 @@ th,td{
 
 
 
-#head .download{
+#head .down{
 
 }
-#head .head .download a{
+#head .head .down a{
 	padding-left: 25px;
-	background: url(../img/ico_01.png)  10px center no-repeat;
+	background: url(../images/ico_01.png)  10px center no-repeat;
 }
-#head .download div{
+#head .down div{
 	position: absolute;
 	left: -46px;
 	border: 1px solid #ddd;
@@ -224,7 +224,7 @@ th,td{
 	background: #fff;
 	display: none;
 }
-#head .download:hover div{
+#head .down:hover div{
 	display: block
 }
 
@@ -260,7 +260,7 @@ th,td{
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	background: url(../img/ico_03.gif);
+	background: url(../images/ico_03.gif);
 	vertical-align: middle;
 }
 
@@ -308,7 +308,7 @@ th,td{
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
-	background: url(../img/ico_04.gif);
+	background: url(../images/ico_04.gif);
 }
 .cartWrap i{
 	font: 12px/20px "微软雅黑";
@@ -342,7 +342,7 @@ th,td{
 	display: block;
 	width: 12px;
 	height: 8px;
-	background: url(../img/ico_17.gif);
+	background: url(../images/ico_17.gif);
 	position: absolute;
 	top: -8px;
 	right: 24px;
@@ -412,22 +412,22 @@ th,td{
 }
 /* 滑动条的上下箭头 */
 .cartWrap .topBtn{
-	background: url(../img/topBtn_bg.gif) 0 0;
+	background: url(../images/topBtn_bg.gif) 0 0;
 }
 .cartWrap .topBtn:hover{
-	background: url(../img/topBtn_bg.gif) 0 -34px;
+	background: url(../images/topBtn_bg.gif) 0 -34px;
 }
 .cartWrap .topBtn:active{
-	background: url(../img/topBtn_bg.gif) 0 -51px;
+	background: url(../images/topBtn_bg.gif) 0 -51px;
 }
 .cartWrap .bottomBtn{
-	background: url(../img/bottomBtn_bg.gif) 0 0;
+	background: url(../images/bottomBtn_bg.gif) 0 0;
 }
 .cartWrap .bottomBtn:hover{
-	background: url(../img/bottomBtn_bg.gif) 0 -34px;
+	background: url(../images/bottomBtn_bg.gif) 0 -34px;
 }
 .cartWrap .bottomBtn:active{
-	background: url(../img/bottomBtn_bg.gif) 0 -51px;
+	background: url(../images/bottomBtn_bg.gif) 0 -51px;
 }
 /* 滑块 */
 .cartWrap .slideWrap{
@@ -485,7 +485,7 @@ th,td{
 	z-index: 2;
 	background: #fff;
 	width: 100%;
-	transition: .2s opacity;
+	transition: .3s opacity;
 }
 .nav .subNav ul{
 	display: none;
@@ -640,13 +640,13 @@ footer .foot .title div{
 	padding-left: 70px;
 }
 footer .foot .title div:nth-child(1){
-	background: url(../img/ico_08.gif) left no-repeat;
+	background: url(../images/ico_08.gif) left no-repeat;
 }
 footer .foot .title div:nth-child(2){
-	background: url(../img/ico_09.gif) left no-repeat;
+	background: url(../images/ico_09.gif) left no-repeat;
 }
 footer .foot .title div:nth-child(3){
-	background: url(../img/ico_10.gif) left no-repeat;
+	background: url(../images/ico_10.gif) left no-repeat;
 }
 footer .foot .copy{
 	padding: 30px 0;
@@ -676,13 +676,13 @@ footer .foot .copy a{
 	margin: 10px 0;
 }
 #sideBar .top a:nth-child(1){
-	background: url(../img/ico_11.gif) top center no-repeat;
+	background: url(../images/ico_11.gif) top center no-repeat;
 }
 #sideBar .top a:nth-child(2){
-	background: url(../img/ico_12.gif) top center no-repeat;
+	background: url(../images/ico_12.gif) top center no-repeat;
 }
 #sideBar .top a:nth-child(3){
-	background: url(../img/ico_13.gif) top center no-repeat;
+	background: url(../images/ico_13.gif) top center no-repeat;
 }
 #sideBar .back{
 	display: block;
@@ -690,7 +690,7 @@ footer .foot .copy a{
 	color: #fff;
 	padding-top: 20px;
 	box-sizing: border-box;
-	background: #999 url(../img/ico_14.gif) center 8px  no-repeat;
+	background: #999 url(../images/ico_14.gif) center 8px  no-repeat;
 }
 #sideBar .back:hover{
 	background-color: #B4A078;

@@ -20,6 +20,15 @@ window.yx={
 			obj.detachEvent('on'+ev,fn);
 		}
 	},
+	getTopValue:function(obj){		//获取元素离html的距离
+		var top=0;
+		while(obj.offsetParent){
+			top+=obj.offsetTop;
+			obj=obj.offsetParent;
+		}
+		
+		return top;
+	},
 	public:{
 		navFn:function(){		//导航功能
 			var nav=yx.g('.nav');
@@ -56,6 +65,27 @@ window.yx={
 			}
 			
 
+		},
+		lazyImgFn:function(){		//图片懒加载功能
+			yx.addEvent(window,'scroll',delayImg);
+			delayImg();
+			function delayImg(){
+				var originals=yx.ga('.original');		//所有要懒加载的图片
+				var scrollTop=window.innerHeight+window.pageYOffset;		//这个距离是可视区的高度与滚动条的距离之和
+				
+				for(var i=0;i<originals.length;i++){
+					//如果图片离html的上边的距离小于滚动条的距离与可视区的距离之和的话，就表示图片已经进入到可视区了
+					if(yx.getTopValue(originals[i])<scrollTop){
+						originals[i].src=originals[i].getAttribute('data-original');
+						originals[i].removeAttribute('class');	//如果这个图片的地址已经换成真实的地址了，那就把它身上的class去掉，为了再次获取不到这张图片
+					}
+				}
+				
+				if(originals[originals.length-1].getAttribute('src')!='images/empty.gif'){
+					//当这个条件成立的时候，说明现在所有的图片的地址都已经换成真实的地址了，这个时候就不需要再执行这个函数了
+					yx.removeEvent(window,'scroll',delayImg);
+				}
+			}
 		}
 			
 	}		
