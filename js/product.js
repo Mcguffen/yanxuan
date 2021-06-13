@@ -419,5 +419,176 @@ positionFn.innerHTML+=curData.name;
 			};
 		}
 	}
+		//页码功能
+		createPage(10,curData.length);
+		function createPage(pn,tn){
+			//pn			显示页码的数量
+			//tn			数据的总数
+			var page=yx.g('.page');
+			var totalNum=Math.ceil(tn/pn);		//最多能显示的页码数量
+			
+			//如果用户给的页数比总页数还要大，就改成总数
+			if(pn>totalNum){
+				pn=totalNum;
+			}
+			page.innerHTML='';
+			
+			var cn=0;		//当前点击的页码的索引
+			var spans=[];	//把数字的页码都放在一个数组里，其它的地方要用到
+			var div=document.createElement("div");
+			div.className='mainPage';
+			
+			//创建首页页码
+			var indexPage=pageFn('首页',function(){
+				for(var i=0;i<pn;i++){
+					spans[i].innerHTML=i+1;
+				}
+				cn=0;
+				
+				showComment(10,0);
+				changePage();
+			});
+			if(indexPage){		//避免页码的数量小于2的时候，返回值是个undefined，这里就会报错
+				indexPage.style.display='none';
+			}
+			
+			//创建上一页页码
+			var prvePage=pageFn('<上一页',function(){
+				/*cn--;
+				if(cn<0){
+					cn=0;
+				}*/
+				
+				if(cn>0){
+					cn--;
+				}
+				
+				showComment(10,spans[cn].innerHTML-1);
+				changePage();
+			});
+			if(prvePage){
+				prvePage.style.display='none';
+			}
+			
+			
+			//创建数字页码
+			for(var i=0;i<pn;i++){
+				var span=document.createElement("span");
+				span.index=i;
+				span.innerHTML=i+1;
+				spans.push(span);
+				
+				//给第1个页码加上class
+				span.className=i?'':'active';
+				
+				span.onclick=function(){
+					cn=this.index;
+					showComment(10,this.innerHTML-1);
+					changePage();
+				};
+				
+				div.appendChild(span);
+			}
+			page.appendChild(div);
+			
+			
+			//创建下一页页码
+			var nextPage=pageFn('下一页>',function(){
+				/*cn++;
+				if(cn>spans.length-1){
+					cn=spans.length-1;
+				}*/
+	
+				if(cn<spans.length-1){
+					cn++;
+				}
+				
+				showComment(10,spans[cn].innerHTML-1);
+				changePage();
+			});
+			
+			//创建尾页页码
+			var endPage=pageFn('尾页',function(){
+				var end=totalNum;
+				for(var i=pn-1;i>=0;i--){
+					spans[i].innerHTML=end--;
+				}
+				cn=spans.length-1;
+				
+				showComment(10,totalNum-1);
+				changePage();
+			});
+			
+			
+			//更新页码功能
+			function changePage(){
+				var cur=spans[cn];				//当前点击的那个页码
+				var curInner=cur.innerHTML;		//因为后面会修改，所以存一下当前的页码的内容
+				
+				//拿最后的页码数字减去第一个页码的数字算出的差，就是页码要增加或者减少的数量，同时能保证点击的那个页码会出现在更新后的页码里面
+				var differ=spans[spans.length-1].innerHTML-spans[0].innerHTML;
+				
+				//点击的是最后面的页码（页码要增加）
+				if(cur.index==spans.length-1){
+					if(Number(cur.innerHTML)+differ>totalNum){
+						//如果加上差值后的页码要比总页码还要大，说明右边已经超过总页码了，那就需要重新设置一下差值
+						differ=totalNum-cur.innerHTML;
+					}
+				}
+				
+				//点击的是最前面的页码（页码要减少）
+				if(cur.index==0){
+					if(cur.innerHTML-differ<1){
+						//如果减去差值的页码比1还小，说明左边已经到头了。那就让页码从1开始
+						differ=cur.innerHTML-1;
+					}
+				}
+				
+				for(var i=0;i<spans.length;i++){
+					//点击的是最后面的页码，所有的页码都需要增加
+					if(cur.index==spans.length-1){
+						spans[i].innerHTML=Number(spans[i].innerHTML)+differ;
+					}
+					//点击的是最前面的页码，所有的页码都要减少
+					if(cur.index==0){
+						spans[i].innerHTML-=differ;
+					}
+					
+					
+					//设置class
+					spans[i].className='';
+					if(spans[i].innerHTML==curInner){
+						spans[i].className='active';
+						cn=spans[i].index;
+					}
+				}
+				
+				//显示与隐藏功能页码（当页码里面有功能页码才去执行下面的代码）
+				if(pn>1){
+					//点的是第一个页码，就让首页与上一页隐藏
+					var dis=curInner==1?'none':'inline-block';
+					indexPage.style.display=prvePage.style.display=dis;
+					
+					//点击的是最后一个页码，就让下一页与尾页隐藏
+					var dis=curInner==totalNum?'none':'inline-block';
+					nextPage.style.display=endPage.style.display=dis;
+				}
+				
+			}
+			
+			//创建页码的公用函数
+			function pageFn(inner,fn){
+				if(pn<2){			//如果页码数量没超过2页就不创建功能页码
+					return;
+				}
+				
+				var span=document.createElement("span");
+				span.innerHTML=inner;
+				span.onclick=fn;
+				page.appendChild(span);
+				
+				return span;			//把创建的标签返回出去，在外面能用得到
+			}
+		};
 	
 })();
