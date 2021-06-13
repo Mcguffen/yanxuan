@@ -59,4 +59,20 @@ sayPic.init({
 	moveWay:'position'
 });
 
-
+//人气推荐选项卡
+(function(){
+	var titles=yx.ga("#recommend header li");
+	var contents=yx.ga("#recommend .content");
+	
+	for(var i=0;i<titles.length;i++){
+		titles[i].index=i;
+		titles[i].onclick=function(){
+			for(var i=0;i<titles.length;i++){
+				titles[i].className='';
+				contents[i].style.display='none';
+			}
+			titles[this.index].className='active';
+			contents[this.index].style.display='block';
+		};
+	}
+})();
