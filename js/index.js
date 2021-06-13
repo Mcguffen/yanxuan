@@ -28,3 +28,16 @@ newProduct.init({
 	circle:false,
 	moveWay:'position'
 });
+
+// 大家都在说首发轮播图
+var sayPic=new Carousel();
+sayPic.init({
+	id:'sayPic',
+	autoplay:false,
+	intervalTime:3000,
+	loop:false,
+	totalNum:6,
+	moveNum:3,
+	circle:false,
+	moveWay:'position'
+});
