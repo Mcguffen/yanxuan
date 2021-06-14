@@ -155,6 +155,35 @@ window.yx={
 					content.style.top=-(content.offsetHeight-contentWrap.offsetHeight)*scaleY+'px';
 				}
 				
+				//滚轮事件
+				function myScroll(obj,fnUp,fnDown){
+					obj.onmousewheel=fn;
+					obj.addEventListener('DOMMouseScroll',fn);
+					
+					function fn(ev){
+						if(ev.wheelDelta>0 || ev.detail<0){
+							fnUp.call(obj);
+						}else{
+							fnDown.call(obj);
+						}
+						
+						ev.preventDefault();
+						return false;
+					}
+				}
+				//滚轮滚动的功能
+				myScroll(contentWrap,function(){
+					scrollTop-=10;
+					scroll();
+					
+					clearInterval(timer);
+				},function(){
+					scrollTop+=10;
+					scroll();
+					
+					clearInterval(timer);
+				});
+				
 				
 			}		
 		},
