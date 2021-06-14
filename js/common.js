@@ -141,6 +141,56 @@ window.yx={
 					return false;
 				};
 				
+				//滚轮滚动的功能
+				myScroll(contentWrap,function(){
+					scrollTop-=10;
+					scroll();
+					
+					clearInterval(timer);
+				},function(){
+					scrollTop+=10;
+					scroll();
+					
+					clearInterval(timer);
+				});
+				
+				//上下箭头点击的功能
+				for(var i=0;i<btns.length;i++){
+					btns[i].index=i;
+					btns[i].onmousedown=function(){
+						var n=this.index;
+						timer=setInterval(function(){
+							scrollTop=n?scrollTop+5:scrollTop-5;
+							scroll();
+						},16);
+						
+					};
+					btns[i].onmouseup=function(){
+						clearInterval(timer);
+					};
+				}
+				
+			
+				//滑块区域点击的功能
+				slideWrap.onmousedown=function(ev){
+					timer=setInterval(function(){
+						var slideTop=slide.getBoundingClientRect().top+slide.offsetHeight/2;
+						if(ev.clientY<slideTop){
+							//这个条件成立说明现在鼠标在滑块的上面，滚动条应该往上走
+							scrollTop-=5;
+						}else{
+							scrollTop+=5;
+						}
+						
+						//如果他们俩的差的绝对值小于5了，我就认为到达了终点，这个时候清除掉定时器就能够解决闪动的问题
+						if(Math.abs(ev.clientY-slideTop)<=5){
+							clearInterval(timer);
+						}
+						
+						scroll();
+					},16);
+				};
+				
 				//滚动条的主体功能
 				function scroll(){
 					if(scrollTop<0){
@@ -170,33 +220,6 @@ window.yx={
 						ev.preventDefault();
 						return false;
 					}
-				}
-				//滚轮滚动的功能
-				myScroll(contentWrap,function(){
-					scrollTop-=10;
-					scroll();
-					
-					clearInterval(timer);
-				},function(){
-					scrollTop+=10;
-					scroll();
-					
-					clearInterval(timer);
-				});
-				//上下箭头点击的功能
-				for(var i=0;i<btns.length;i++){
-					btns[i].index=i;
-					btns[i].onmousedown=function(){
-						var n=this.index;
-						timer=setInterval(function(){
-							scrollTop=n?scrollTop+5:scrollTop-5;
-							scroll();
-						},16);
-						
-					};
-					btns[i].onmouseup=function(){
-						clearInterval(timer);
-					};
 				}
 				
 				
