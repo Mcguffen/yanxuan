@@ -122,6 +122,39 @@ window.yx={
 				//内容与内容的父级的倍数与滑块与滑块父级的倍数是相等的
 				slide.style.height=slideWrap.offsetHeight/beishu+'px';
 				
+				//滑块拖拽
+				var scrollTop=0;		//滚动条走的距离
+				var maxHeight=slideWrap.offsetHeight-slide.offsetHeight;		//滑块能够走的最大距离
+				
+				slide.onmousedown=function(ev){
+					var disY=ev.clientY-slide.offsetTop;
+					
+					document.onmousemove=function(ev){
+						scrollTop=ev.clientY-disY;
+						scroll();
+					};
+					document.onmouseup=function(){
+						this.onmousemove=null;
+					};
+					
+					ev.cancelBubble=true;
+					return false;
+				};
+				
+				//滚动条的主体功能
+				function scroll(){
+					if(scrollTop<0){
+						scrollTop=0;
+					}else if(scrollTop>maxHeight){
+						scrollTop=maxHeight;
+					}
+					
+					var scaleY=scrollTop/maxHeight;
+					
+					slide.style.top=scrollTop+'px';
+					content.style.top=-(content.offsetHeight-contentWrap.offsetHeight)*scaleY+'px';
+				}
+				
 				
 			}		
 		},
