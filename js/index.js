@@ -1,7 +1,8 @@
 //公用方法调用
 yx.public.navFn();
 yx.public.lazyImgFn();
-yx.public.backUpFn()
+yx.public.backUpFn();
+yx.public.shopFn();
 
 //banner图轮播
 var bannerPic=new Carousel();
@@ -28,7 +29,7 @@ newProduct.init({
 	circle:false,
 	moveWay:'position'
 });
-// 在loop：false时，也就是轮播内容不循环的时候，当轮播内容到头改变按钮 < 或 > 的颜色
+
 newProduct.on('rightEnd',function(){
 	//alert('右边到头了');
 	this.nextBtn.style.background='#E7E2D7';
@@ -46,18 +47,6 @@ newProduct.on('rightClick',function(){
 	this.prevBtn.style.background='#D0C4AF';
 });
 
-// 大家都在说首发轮播图
-var sayPic=new Carousel();
-sayPic.init({
-	id:'sayPic',
-	autoplay:true,
-	intervalTime:3000,
-	loop:true,
-	totalNum:6,
-	moveNum:1,
-	circle:false,
-	moveWay:'position'
-});
 
 //人气推荐选项卡
 (function(){
@@ -77,6 +66,7 @@ sayPic.init({
 	}
 })();
 
+
 //限时购
 (function(){
 	var timeBox=yx.g('#limit .timeBox');
@@ -86,7 +76,7 @@ sayPic.init({
 	//倒计时
 	showTime();
 	function showTime(){
-		var endTime=new Date(2021,6,14,14);
+		var endTime=new Date(2017,5,29,13);
 		if(new Date()<endTime){	//如果当前的时间没有超过结束的时间才去做倒计时
 			var overTime=yx.cutTime(endTime);
 			spans[0].innerHTML=yx.format(overTime.h);
@@ -123,3 +113,18 @@ sayPic.init({
 	
 	boxWrap.innerHTML=str;
 })();
+
+
+//大家都在说轮播图
+var say=new Carousel();
+say.init({
+	id:'sayPic',
+	autoplay:true,
+	intervalTime:3000,
+	loop:true,
+	totalNum:3,
+	moveNum:1,
+	circle:false,
+	moveWay:'position'
+});
+

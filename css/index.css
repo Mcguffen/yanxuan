@@ -12,9 +12,9 @@
 	left: 50%;
 	margin-left: -960px;
 }
-/* .bannerPic .carouselImgCon img{
+/*.bannerPic .carouselImgCon img{
 	opacity: 0;
-} */
+}*/
 .prev,.next{
 	width: 50px;
 	height: 50px;
@@ -22,7 +22,7 @@
 	background: #d0c4af;
 	color: #fff;
 	font-size: 40px;
-	line-height:45px;
+	line-height:55px;
 	overflow: hidden;
 	border-radius: 50%;
 	position: absolute;
@@ -32,6 +32,9 @@
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
+}
+.prev:hover,.next:hover{
+	background: #B19E7A;
 }
 #banner .prev{
 	left: 20%;
@@ -66,6 +69,7 @@
 	border: 3px solid #dfcead;
 	transform: scale(2);
 }
+
 
 
 /*----------品牌制造商----------*/
@@ -135,6 +139,8 @@
 #brand .bBox:last-child img{
 	height: 155px;
 }
+
+
 
 /*----------新品首发----------*/
 #new{
@@ -216,6 +222,8 @@
 	right: -70px;
 }
 
+
+
 /*----------人气推荐----------*/
 #recommend{
 	background: #f4f0ea;
@@ -283,6 +291,8 @@
 #recommend .original{
 	background-color: #fff;
 }
+
+
 
 /*----------限时购----------*/
 #limit{
@@ -416,6 +426,7 @@
 }
 
 
+
 /*----------居家----------*/
 .category{
 	width: 1090px;
@@ -471,6 +482,7 @@
 .category .categoryList span{
 	color: #d4282d;
 }
+
 
 
 /*----------大家都在说----------*/

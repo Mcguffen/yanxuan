@@ -1,4 +1,3 @@
-// 限时购用到的数据
 var json_promotion = {
 	"currentTime": 1490001617520,
 	"itemList": [{

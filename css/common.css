@@ -1,102 +1,74 @@
-/* 通用css */
-/* 样式重置  去除浏览器自带样式*/
 body,h1,h2,h3,h4,h5,h6,p,dl,dd{
 	margin: 0;
 }
-/* 通用字体样式 */
 body{
-	
 	font-size: 14px;
 	color: #333;
 	font-family: "微软雅黑";
 }
-
 ul,ol{
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-/* 去除ie浏览器自带border样式 */
 img{
 	border: none;
-	/* 图片垂直方向以居中对齐 */
 	vertical-align: middle;
 }
-/* 去除a标签自带下划线和字体颜色 */
 a{
 	text-decoration: none;
-	color:#333;
+	color: #333;
 }
-/* a标签hover后颜色 */
 a:hover{
 	color: #b4a078;
 }
-/* 表单样式 */
 input{
 	margin: 0;
 	padding: 0;
-	/* 对齐 */
 	vertical-align: middle;
 	border: 1px solid #ccc;
 }
-/* 表单input前面的文字内容 */
 label{
 	vertical-align: middle;
 }
-/* 表格之前的间隙 */
 table{
 	border-collapse: collapse;
 }
-
 th,td{
 	padding: 0;
 }
-/* 居中 */
+
+
 .center{
 	width: 1090px;
 	margin: 0 auto;
 }
-/* 浮动 */
 .left{
 	float: left;
 }
 .right{
-	float:right;
+	float: right;
 }
-/* 清除浮动 */
 .clearfix:after{
-	content: "";
-	display: block;
+	content: '';
 	clear: both;
+	display: block;
 }
-/* 兼容ie */
-.clearfix{
-	zoom: 1;
-}
-/* 图片放大 前的初始样式*/
 .scaleImg img{
-	/* 减速 */
 	transition: 1s ease-out;
-	/* 放大1倍  还是本身大小*/
 	transform: scale(1);
-	
 }
-
-/* hover图片时放大*/
 .scaleImg:hover img{
-	/* 放大1.1倍 */
 	transform: scale(1.1);
 }
-
-/* 图片懒加载 配合js来做 css主要是在真的图片还没有加载的时候 先用css提供的背景图片 */
 .original{
 	background: #f4f4f4 url(../images/original.png) center no-repeat;
 }
 
-/* ---------头部--------- */
+
+/*----------头部----------*/
 #head{
 	border-bottom: 1px solid #f3f3f3;
-	/* 阴影 x轴 y轴 阴影大小*/
 	box-shadow: 0 2px 2px #f3f3f3;
 }
 #head .head{
@@ -107,7 +79,8 @@ th,td{
 #head .left{
 	color: #ccc;
 }
-#head .head li {
+
+#head .head li{
 	float: left;
 	position: relative;
 	z-index: 2;
@@ -118,33 +91,33 @@ th,td{
 	border-left: 1px solid #5c5c5c;
 }
 #head .head li a:hover{
-	color: #fff
+	color: #fff;
 }
 #head .head li a.noborder{
 	border: none;
+}
+#head .margin{
+	margin-right: 10px;
 }
 #head .customer{
 	padding-right: 10px;
 	margin-right: 10px;
 	background: url(../images/customer_bg1.gif) 68px center no-repeat;
-	
 }
 #head .customer:hover{
-	
 	background: url(../images/customer_bg2.gif) 68px center no-repeat;
 }
 #head .customer:hover ul{
-		display: block;
+	display: block;
 }
 #head .customer ul{
 	position: absolute;
 	border: 1px solid #ddd;
-	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	background: #fff;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	display: none;
 }
-
-#head .customer ul:before,#head .down div::before{
+#head .customer ul:before,#head .down div:before{
 	width: 10px;
 	height: 6px;
 	content: '';
@@ -160,13 +133,13 @@ th,td{
 	float: none;
 }
 #head .customer ul a{
-		display: block;
-		padding: 0;
-		border-left: none;
-		border-bottom: 1px solid #ddd;
-		text-align: center;
-		margin: 0 10px;
-		color: #999;
+	display: block;
+	padding: 0;
+	border-left: none;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	margin: 0 10px;
+	color: #999;
 }
 #head .customer ul a:hover{
 	color: #b4a078;
@@ -175,25 +148,26 @@ th,td{
 	border-bottom: none;
 }
 #head .customer li.phone{
-		background: url(../images/phone_bg1.gif) 62px center no-repeat;
+	background: url(../images/phone_bg1.gif) 62px center no-repeat;
 }
 #head .customer li.phone:hover{
-		background: url(../images/phone_bg2.gif) 62px center no-repeat;
+	background: url(../images/phone_bg2.gif) 62px center no-repeat;
 }
 #head .customer li.phone:hover div{
 	display: block;
 }
-#head .customer li.phone div {
+#head .customer li.phone div{
 	position: absolute;
 	width: 110px;
 	height: 57px;
 	right: -110px;
 	top: 0;
 	line-height: 20px;
+	background: #fff;
 	text-align: center;
 	box-shadow: 0 0 3px rgba(0,0,0,.2);
-	background: #fff;
 	display: none;
+	z-index: 2;
 }
 #head .customer li.phone div p:nth-child(1){
 	font-size: 14px;
@@ -204,14 +178,9 @@ th,td{
 	color: #ccc;
 }
 
-
-
-#head .down{
-
-}
 #head .head .down a{
 	padding-left: 25px;
-	background: url(../images/ico_01.png)  10px center no-repeat;
+	background: url(../images/ico_01.png) 10px center no-repeat;
 }
 #head .down div{
 	position: absolute;
@@ -227,6 +196,8 @@ th,td{
 #head .down:hover div{
 	display: block
 }
+
+
 
 /*----------搜索----------*/
 .search{
@@ -264,24 +235,23 @@ th,td{
 	vertical-align: middle;
 }
 
+
+
 /*----------导航----------*/
 .nav{
 	position: relative;
 	background: #fff;
 }
 .nav .center{
-	 position: relative;
+	position: relative;
 }
-/* 碍眼的先不显示 */
 .nav .logo,.nav .login{
 	display: none;
 }
-
 .navBar,.nav .subNav{
 	text-align: center;
 	font-size: 0;
 }
-
 .navBar li,.nav .subNav li{
 	display: inline-block;
 	font-size: 14px;
@@ -300,7 +270,7 @@ th,td{
 	border-bottom: 3px solid #b4a078;
 }
 
-/* 购物车父级样式 */
+/*购物车父级样式*/
 .cartWrap{
 	position: absolute;
 	right: 0;
@@ -322,21 +292,18 @@ th,td{
 	text-align: center;
 	border-radius: 50%;
 }
-
-/* 购物车弹出层 */
 .cartWrap .cart{
-		/* display: none; */
-		width: 328px;
-		border: 1px solid #b5a176;
-		box-shadow: 0 0 3px rgba(0,0,0,.5);
-		position: absolute;
-		top: 30px;
-		right: -22px;
-		background: #fff;
-		padding-top: 15px;
-		z-index: 10;
+	display: none;
+	width: 328px;
+	border: 1px solid #b5a176;
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
+	position: absolute;
+	top: 30px;
+	right: -22px;
+	background: #fff;
+	padding-top: 15px;
+	z-index: 10;
 }
-
 .cartWrap .cart:before{
 	content: '';
 	display: block;
@@ -397,7 +364,6 @@ th,td{
 	font: 16px/25px "微软雅黑";
 	padding-top: 5px;
 }
-
 /*购物车里滚动条的样式*/
 .cartWrap .scrollBar{
 	float: right;
@@ -410,7 +376,6 @@ th,td{
 	width: 17px;
 	height: 17px;
 }
-/* 滑动条的上下箭头 */
 .cartWrap .topBtn{
 	background: url(../images/topBtn_bg.gif) 0 0;
 }
@@ -429,7 +394,6 @@ th,td{
 .cartWrap .bottomBtn:active{
 	background: url(../images/bottomBtn_bg.gif) 0 -51px;
 }
-/* 滑块 */
 .cartWrap .slideWrap{
 	height: 210px;
 	position: relative;
@@ -447,7 +411,6 @@ th,td{
 .cartWrap .slide:active{
 	background: #787878;
 }
-/* 结算 */
 .cartWrap .total{
 	height: 66px;
 	background: #f4f0ea;
@@ -472,12 +435,10 @@ th,td{
 }
 
 
-
-
 /*弹出的导航样式*/
 .nav .subNav{
 	box-shadow: 0 6px 6px #ececec;
-	/* padding-bottom: 20px; */
+	/*padding-bottom: 20px;*/
 	opacity: 0;
 	
 	position: absolute;
@@ -490,22 +451,20 @@ th,td{
 .nav .subNav ul{
 	display: none;
 	padding: 10px 0 20px 0;
-
-}
-.nav .subNav img{
-	display: block;
-	margin: 0 auto 10px auto;
-
-}
-.nav .subNav a{
-	font-weight: bold;
 }
 .nav .subNav li{
 	height: auto;
 }
+.nav .subNav img{
+	display: block;
+	margin: 0 auto 10px auto;
+}
+.nav .subNav a{
+	font-weight: bold;
+}
+
 
 /*吸顶导航样式*/
-/* 通过css来控制是吸顶导航还是固定导航具体就是加了id="navFix"就是吸顶导航的样式,否则就是固定导航样式 */
 #navFix{
 	position: fixed;
 	top: 0;
@@ -554,10 +513,10 @@ th,td{
 	top: 20px;
 	float: right;
 }
-#navFix .subNav{
-	/* padding-top: 10px; */
-	/* display: block; */
-}
+/*#navFix .subNav{
+	padding-top: 10px;
+}*/
+
 
 /*----------底部----------*/
 footer{
@@ -657,6 +616,7 @@ footer .foot .copy a{
 	color: #999;
 }
 
+
 /*----------侧边栏----------*/
 #sideBar{
 	width: 60px;
@@ -695,6 +655,7 @@ footer .foot .copy a{
 #sideBar .back:hover{
 	background-color: #B4A078;
 }
+
 
 /*----------面包屑----------*/
 #position{

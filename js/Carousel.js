@@ -167,7 +167,7 @@
 				}
 			});
 		},
-		positionFn:function(){			//位置运动方式
+		positionFn:function(){
 			//左边到头
 			if(this.cn<0){
 				if(this.settings.loop){

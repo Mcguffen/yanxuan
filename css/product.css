@@ -197,6 +197,7 @@
 }
 
 
+
 /*----------大家都在看----------*/
 #look{
 	margin: 20px auto;
@@ -279,6 +280,7 @@
 }
 
 
+
 /*----------详情评价专题推荐---------*/
 /*详情里的样式*/
 #bottom{
@@ -351,7 +353,6 @@
 #bottom .problem dd{
 	color: #999;
 }
-
 
 /*评价里的样式*/
 #bottom .border{
@@ -542,6 +543,8 @@
 	display: inline-block;
 }
 
+
+
 /*----------专题推荐---------*/
 #bottom .special{
 	width: 298px;
@@ -576,138 +579,3 @@
 
 
 
-/* 服务政策 */
-.popWrap .pop{
-	display: none;
-	width: 360px;
-	border: 1px solid #b5a176;
-	box-shadow: 0 0 3px rgba(0,0,0,.5);
-	position: absolute;
-	top: 466px;
-	right: 282px;
-	background: #fff;
-	padding: 15px;
-	z-index: 10;	
-}
-.popWrap .pop:before{
-	content: '';
-	display: block;
-	width: 12px;
-	height: 8px;
-	background: url(../images/ico_17.gif);
-	position: absolute;
-	top: -8px;
-	right: 24px;
-}
-.popWrap .pop .list{
-	height: 300px;
-	position: relative;
-	overflow: hidden;
-}
-    
-.popWrap .pop .list ul{
-	padding-left: 15px;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-.popWrap .pop .list ul li{
-	height: 100px;
-	margin-bottom: 10px;
-}
-
-.popWrap .pop  .list ul li .left img{
-	width: 90px;
-	height: 90px;
-	background: #f4f4f4;
-}
-.popWrap .pop .right .message{
-	width: 227px;
-	
-	padding: 5px 0 5px 10px;
-	font: 12px/25px "微软雅黑";
-}
-.popWrap .pop .right .message p:nth-child(1){
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-}
-.popWrap .pop .right .message p:nth-child(2){
-	color: #c5c5c5;
-}
-.popWrap{
-	float: left;
-	width: 45px;
-	
-	font: 12px/25px "微软雅黑";
-	
-}
-
-
-
-/*滚动条的样式*/
-.popWrap  .pop .list .scrollBar{
-	float: right;
-	width: 17px;
-	
-	background: #f1f1f1;
-}
-
-/* 滑动条的上下箭头 */
-.popWrap .pop .topBtn{
-	background: url(../images/topBtn_bg.gif) 0 0;
-}
-.popWrap .pop .topBtn:hover{
-	background: url(../images/topBtn_bg.gif) 0 -34px;
-}
-.popWrap .pop .topBtn:active{
-	background: url(../images/topBtn_bg.gif) 0 -51px;
-}
-.popWrap .pop .bottomBtn{
-	background: url(../images/bottomBtn_bg.gif) 0 0;
-}
-.popWrap  .pop .bottomBtn:hover{
-	background: url(../images/bottomBtn_bg.gif) 0 -34px;
-}
-.popWrap .pop .bottomBtn:active{
-	background: url(../images/bottomBtn_bg.gif) 0 -51px;
-}
-/* 滑块 */
-.popWrap .pop .slideWrap{
-	height: 266px;
-	position: relative;
-}
-.popWrap .pop .slide{
-	width: 17px;
-	height: 50px;
-	background: #c1c1c1;
-	position: absolute;
-	top: 0;
-}
-.popWrap .pop .slide:hover{
-	background: #a9a9a9;
-}
-.popWrap .pop .slide:active{
-	background: #787878;
-}
-/* 结算 */
-.popWrap .pop .total{
-	height: 66px;
-	background: #f4f0ea;
-	font: 12px/66px "微软雅黑";
-	text-align: center;
-}
-
-.popWrap .pop .total a{
-	display: inline-block;
-	width: 110px;
-	height: 36px;
-	line-height: 36px;
-	background: #b4a078;
-	color: #fff;
-	margin-left: 20px;
-	border-radius: 2px;
-}
-.popWrap .pop .total a:hover{
-	opacity: .8;
-}

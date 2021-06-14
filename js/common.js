@@ -9,7 +9,6 @@ window.yx={
 		if(obj.addEventListener){
 			obj.addEventListener(ev,fn);
 		}else{
-			// ie
 			obj.attachEvent('on'+ev,fn);
 		}
 	},
@@ -70,14 +69,13 @@ window.yx={
 			for(var i=1;i<lis.length-3;i++){
 				newLis.push(lis[i]);
 			}
-			// console.log(newLis);
+			
 			for(var i=0;i<newLis.length;i++){
 				newLis[i].index=uls[i].index=i;
 				newLis[i].onmouseenter=uls[i].onmouseenter=function(){
-					uls[this.index].style.display='block';
 					newLis[this.index].className='active';
 					subNav.style.opacity=1;
-					
+					uls[this.index].style.display='block';
 				};
 				newLis[i].onmouseleave=uls[i].onmouseleave=function(){
 					newLis[this.index].className='';
@@ -90,36 +88,108 @@ window.yx={
 			setNavPos();
 			var top=nav.offsetTop;		//这是新加的，解决bug
 			function setNavPos(){
-				nav.id=window.pageYOffset>nav.offsetTop?'navFix':'';
+				//nav.id=window.pageYOffset>nav.offsetTop?'navFix':'';
+				nav.id=window.pageYOffset>top?'navFix':'';
 			}
-			
-
 		},
-
-		shopFn(){// 购物车功能
-				/*
-				 * localStorage		本地存储
-				 * 	可以把数据存储在用户的浏览器缓存里面，相当于在用户的本地创建了一个数据库，存储的形式是一个对象
-				 * 	localStorage.setItem(key,value)		存储一条数据
-				 * 	localStorage.getItem(key)			获取某条数据
-				 * 	localStorage.removeItem(key)			删除某条数据
-				 * 	localStorage.clear()					删除所有数据
-				 * 	localStorage.length					获取数据的长度
-				 * 	localStorage.key(i)					获取某条数据的key
-				 * 
-				 * 生命周期		只要不清除就一直存在
-				 * 注意：
-				 * 	1、IE不支持本地操作，需要放在服务器环境下。尽量都在服务器环境下操作
-				 * 	2、如果设置的是重复的key，不会增加，而是修改已有的数据
-				 * 			
-				 */
+		shopFn(){		//购物车功能
+			/*
+			 * localStorage		本地存储
+			 * 	可以把数据存储在用户的浏览器缓存里面，相当于在用户的本地创建了一个数据库，存储的形式是一个对象
+			 * 	localStorage.setItem(key,value)		存储一条数据
+			 * 	localStorage.getItem(key)			获取某条数据
+			 * 	localStorage.removeItem(key)			删除某条数据
+			 * 	localStorage.clear()					删除所有数据
+			 * 	localStorage.length					获取数据的长度
+			 * 	localStorage.key(i)					获取某条数据的key
+			 * 
+			 * 生命周期		只要不清除就一直存在
+			 * 注意：
+			 * 	1、IE不支持本地操作，需要放在服务器环境下。尽量都在服务器环境下操作
+			 * 	2、如果设置的是重复的key，不会增加，而是修改已有的数据
+			 * 			
+			 */
+			
+			/*localStorage.setItem('kaivon','陈学辉');
+			localStorage.setItem('QQ','356985332');
+			localStorage.setItem('网站','http://www.kaivon.cn');
+			//console.log(localStorage.getItem('kaivon'));
+			
+			for(var i=0;i<localStorage.length;i++){
+				//console.log(localStorage.key(i));
+			}
+			localStorage.removeItem('网站');
+			
+			localStorage.clear();
+			console.log(localStorage);*/
+			
+			
+			//购物车添加商品展示
+			var productNum=0;		//买了几个商品
+			(function(local){
+				var totalPrice=0;		//商品合计
+				var ul=yx.g('.cart ul');
+				var li='';
+				ul.innerHTML='';
 				
-
+				for(var i=0;i<local.length;i++){
+					var attr=local.key(i);			//取到每个key
+					console.log(local[attr]);
+					var value=JSON.parse(local[attr]);
+					
+					if(value&&value.sign=='productLocal'){
+						//这个条件成立说明现在拿到的local就是我们主动添加的local
+						li+='<li data-id="'+value.id+'">'+
+								'<a href="#" class="img"><img src="'+value.img+'"/></a>'+
+								'<div class="message">'+
+									'<p><a href="#">'+value.name+'</a></p>'+
+									'<p>'+value.spec.join(' ')+' x '+value.num+'</p>'+
+								'</div>'+
+								'<div class="price">¥'+value.price+'.00</div>'+
+								'<div class="close">X</div>'+
+							'</li>';
+							
+						totalPrice+=parseFloat(value.price)*Number(value.num);
+					}
+				}
+				ul.innerHTML=li;
+				
+				productNum=ul.children.length;			//买了几个商品
+				yx.g('.cartWrap i').innerHTML=productNum;	//更新商品数量的值
+				yx.g('.cartWrap .total span').innerHTML='¥'+totalPrice+'.00';	//更新总价格
+				
+				//删除商品功能
+				var colseBtns=yx.ga('.cart .list .close');
+				for(var i=0;i<colseBtns.length;i++){
+					colseBtns[i].onclick=function(){
+						localStorage.removeItem(this.parentNode.getAttribute('data-id'));
+						
+						yx.public.shopFn();
+						
+						if(ul.children.length==0){
+							yx.g('.cart').style.display='none';
+						}
+					};
+				}
+				
+				//给小红圈添加事件
+				var cartWrap=yx.g('.cartWrap');
+				var timer;		//为了解决购物车与弹出层之间的间隙会触发leave事件的问题
+				
+				cartWrap.onmouseenter=function(){
+					clearTimeout(timer);
+					yx.g('.cart').style.display='block';
+					scrollFn();
+				};
+				cartWrap.onmouseleave=function(){
+					timer=setTimeout(function(){
+						yx.g('.cart').style.display='none';	
+					},100);
+				};
+			})(localStorage);
 			
 			
-			
-			// 购物车的滚动条功能
-			scrollFn()
+			//购物车的滚动条功能
 			function scrollFn(){
 				var contentWrap=yx.g('.cart .list');
 				var content=yx.g('.cart .list ul');
@@ -141,6 +211,7 @@ window.yx={
 				
 				//内容与内容的父级的倍数与滑块与滑块父级的倍数是相等的
 				slide.style.height=slideWrap.offsetHeight/beishu+'px';
+				
 				
 				//滑块拖拽
 				var scrollTop=0;		//滚动条走的距离
@@ -190,7 +261,6 @@ window.yx={
 					};
 				}
 				
-			
 				//滑块区域点击的功能
 				slideWrap.onmousedown=function(ev){
 					timer=setInterval(function(){
@@ -241,15 +311,12 @@ window.yx={
 						return false;
 					}
 				}
-				
-				
-			}		
+			}
 		},
 		lazyImgFn:function(){		//图片懒加载功能
 			yx.addEvent(window,'scroll',delayImg);
 			delayImg();
 			function delayImg(){
-				// console.log(1)
 				var originals=yx.ga('.original');		//所有要懒加载的图片
 				var scrollTop=window.innerHeight+window.pageYOffset;		//这个距离是可视区的高度与滚动条的距离之和
 				
@@ -284,6 +351,5 @@ window.yx={
 				},16);
 			};
 		}
-			
-	}		
+	}
 }
