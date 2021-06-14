@@ -97,6 +97,26 @@ window.yx={
 		},
 
 		shopFn(){// 购物车功能
+				/*
+				 * localStorage		本地存储
+				 * 	可以把数据存储在用户的浏览器缓存里面，相当于在用户的本地创建了一个数据库，存储的形式是一个对象
+				 * 	localStorage.setItem(key,value)		存储一条数据
+				 * 	localStorage.getItem(key)			获取某条数据
+				 * 	localStorage.removeItem(key)			删除某条数据
+				 * 	localStorage.clear()					删除所有数据
+				 * 	localStorage.length					获取数据的长度
+				 * 	localStorage.key(i)					获取某条数据的key
+				 * 
+				 * 生命周期		只要不清除就一直存在
+				 * 注意：
+				 * 	1、IE不支持本地操作，需要放在服务器环境下。尽量都在服务器环境下操作
+				 * 	2、如果设置的是重复的key，不会增加，而是修改已有的数据
+				 * 			
+				 */
+				
+
+			
+			
 			
 			// 购物车的滚动条功能
 			scrollFn()

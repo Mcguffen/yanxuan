@@ -210,6 +210,52 @@ positionFn.innerHTML+=curData.name;
 	}
 })();
 
+//加入购物车功能
+(function(){
+	yx.public.shopFn();
+	
+	var joinBtn=yx.g('#productImg .join');		//加入购物车按钮
+	joinBtn.onclick=function(){
+		var actives=yx.ga('#productImg .fomat .active');			//选中规格的数量
+		var selectNum=yx.g('#productImg .number input').value;	//用户选中的产品个数
+
+		if(actives.length<curData.skuSpecList.length || selectNum<1){
+			
+			alert('请选择正确的规格以及数量');
+			return;
+		}
+		
+		var id='';			//用拼接的id做为key
+		var spec=[];			//规格有多个，所以放在一个数组里
+		
+		for(var i=0;i<actives.length;i++){
+			id+=actives[i].getAttribute('data-id')+';';
+			spec.push(actives[i].innerHTML);
+		}
+		id=id.substring(0,id.length-1);
+		
+		var select={
+			"id":id,
+			"name":curData.name,
+			"price":curData.retailPrice,
+			"num":selectNum,
+			"spec":spec,
+			"img":curData.skuMap[id].picUrl,
+			"sign":"productLocal"		//给自己的local取一个标识，避免取到其它人的local
+		};
+		
+		//把声明的对象存到localStorage里面
+		localStorage.setItem(id,JSON.stringify(select));
+		yx.public.shopFn();
+		
+		var cartWrap=yx.g('.cartWrap');
+		cartWrap.onmouseenter();
+		setTimeout(function(){
+			yx.g('.cart').style.display='none';
+		},2000);
+		
+	};
+})();
 //大家都在看
 (function(){
 	var ul=yx.g('#look ul');
@@ -589,12 +635,10 @@ positionFn.innerHTML+=curData.name;
 				
 				return span;			//把创建的标签返回出去，在外面能用得到
 			}
-		};
-	
-	// 加入购物车功能
-	(function(){
-		yx.public.shopFn()
-	})();
-	
+
+		
+
+
+	};
 })();
 
