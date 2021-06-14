@@ -183,6 +183,21 @@ window.yx={
 					
 					clearInterval(timer);
 				});
+				//上下箭头点击的功能
+				for(var i=0;i<btns.length;i++){
+					btns[i].index=i;
+					btns[i].onmousedown=function(){
+						var n=this.index;
+						timer=setInterval(function(){
+							scrollTop=n?scrollTop+5:scrollTop-5;
+							scroll();
+						},16);
+						
+					};
+					btns[i].onmouseup=function(){
+						clearInterval(timer);
+					};
+				}
 				
 				
 			}		
