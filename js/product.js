@@ -591,4 +591,10 @@ positionFn.innerHTML+=curData.name;
 			}
 		};
 	
+	// 加入购物车功能
+	(function(){
+		yx.public.shopFn()
+	})();
+	
 })();
+

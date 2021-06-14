@@ -325,7 +325,7 @@ th,td{
 
 /* 购物车弹出层 */
 .cartWrap .cart{
-		display: none;
+		/* display: none; */
 		width: 328px;
 		border: 1px solid #b5a176;
 		box-shadow: 0 0 3px rgba(0,0,0,.5);

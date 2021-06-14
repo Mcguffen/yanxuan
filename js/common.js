@@ -95,6 +95,36 @@ window.yx={
 			
 
 		},
+
+		shopFn(){// 购物车功能
+			
+			// 购物车的滚动条功能
+			scrollFn()
+			function scrollFn(){
+				var contentWrap=yx.g('.cart .list');
+				var content=yx.g('.cart .list ul');
+				var scrollBar=yx.g('.cart .scrollBar');
+				var slide=yx.g('.cart .slide');
+				var slideWrap=yx.g('.cart .slideWrap');
+				var btns=yx.ga('.scrollBar span');
+				var timer;
+				
+				//倍数（用来设置滚动条的高度）
+				var beishu=content.offsetHeight/contentWrap.offsetHeight;
+				//设置滚动条显示与否
+				scrollBar.style.display=beishu<=1?'none':'block';
+				
+				//给倍数一下最大值
+				if(beishu>20){
+					beishu=20;
+				}
+				
+				//内容与内容的父级的倍数与滑块与滑块父级的倍数是相等的
+				slide.style.height=slideWrap.offsetHeight/beishu+'px';
+				
+				
+			}		
+		},
 		lazyImgFn:function(){		//图片懒加载功能
 			yx.addEvent(window,'scroll',delayImg);
 			delayImg();
